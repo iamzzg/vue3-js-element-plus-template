@@ -1,0 +1,37 @@
+// element-plus 自定义主题 scss变量
+// https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+
+// @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
+//   // 全局命名空间
+//   $namespace: "dragon"
+// );
+
+/* 只需要重写你需要的即可,覆盖主题颜色 */
+$--colors: (
+  "primary": (
+    "base": #0bb49b
+  ),
+  "success": (
+    "base": #0aa98a
+  ),
+  "warning": (
+    "base": #f2711c
+  ),
+  "danger": (
+    "base": #e21515
+  ),
+  "error": (
+    "base": #ce1515
+  ),
+  "info": (
+    "base": #42b8dd
+  )
+);
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: $--colors
+);
+
+// custom dark variables
+@use "./dark.scss";
+// import dark theme
+@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;

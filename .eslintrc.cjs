@@ -3,7 +3,14 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   root: true,
+  globals: {
+    // 解决eslint提示未引入的变量的名字报错
+    ElMessage: "readonly",
+    ElMessageBox: "readonly",
+    ElNotification: "readonly"
+  },
   env: {
+    // 添加环境下的全局变量名字,让eslint不报错
     es6: true,
     browser: true,
     node: true
@@ -14,6 +21,7 @@ module.exports = {
     "@vue/eslint-config-prettier"
   ],
   rules: {
-    "vue/comment-directive": [0]
+    "vue/comment-directive": [0],
+    "vue/multi-word-component-names": ["off"]
   }
 };

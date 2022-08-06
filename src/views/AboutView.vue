@@ -4,9 +4,7 @@
   </div>
 </template>
 
-<script setup>
-console.log(import.meta.env);
-</script>
+<script setup></script>
 <style>
 @media (min-width: 1024px) {
   .about {

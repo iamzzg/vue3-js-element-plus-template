@@ -1,29 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import { ref } from "vue";
+import Layout from "@/layout/index.vue";
+const size = ref("small");
+const zIndex = ref(3000);
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <el-config-provider :size="size" :z-index="zIndex">
+    <Layout></Layout>
+  </el-config-provider>
 </template>
 
 <style scoped>
