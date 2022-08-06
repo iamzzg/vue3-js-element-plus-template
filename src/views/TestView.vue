@@ -35,6 +35,8 @@ const counterStore = useCounterStore();
 const { counter } = storeToRefs(counterStore);
 const { increment } = counterStore;
 
+console.log("test");
+
 function showNotification() {
   ElNotification({ title: "标题", message: "age", duration: 0 });
 }
