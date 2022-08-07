@@ -38,6 +38,7 @@
   <el-row>
     <el-col>
       <i-mdi-account-box class="icon" />
+      <SvgIcon name="user"></SvgIcon>
     </el-col>
   </el-row>
   <h4>windicss</h4>
@@ -53,6 +54,7 @@ import { storeToRefs } from "pinia";
 import { useCounterStore } from "@/stores/counter.js";
 import { toggleTheme } from "@/hooks/useLightDark.js";
 import { testApi } from "@/api/test";
+import SvgIcon from "@/components/SvgIcon.vue";
 const counterStore = useCounterStore();
 const { counter } = storeToRefs(counterStore);
 const { increment } = counterStore;
