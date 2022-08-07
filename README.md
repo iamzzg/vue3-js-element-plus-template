@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Element-plus 按需导入注意事项
+
+1. 对于 ElMessage 等通过 api 形式调用的组件,由于使用了自动导入插件,不需要手动导入,如果手动导入了,那么就还需要手动导入样式,否则样式有些不生效

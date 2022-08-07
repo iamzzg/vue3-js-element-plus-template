@@ -36,12 +36,11 @@
   --color-primary: #0bb49b;
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   font-weight: normal;
   margin: 0;
+  padding: 0;
 }
 
 body {
