@@ -1,25 +1,23 @@
 import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
-import { createPlugins } from "./build/plugin";
+import { createPlugins } from "./config/vite/plugins";
+import { createProxy } from "./config/vite/proxy";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
+  // let env = loadEnv(mode, process.cwd());
+  // console.log("输出 loadEnv()  ::>> ", env);
+  // console.log(command, mode);
+  // console.log("输出   ::>> ", process.env);
+  const isBuild = command === "build";
   return {
     server: {
       // port:3000,
       open: true,
-      proxy: {
-        // 正则表达式写法
-        "^/fallback/.*": {
-          target: "http://jsonplaceholder.typicode.com",
-          changeOrigin: true,
-          ws: true,
-          rewrite: (path) => path.replace(/^\/fallback/, "")
-        }
-      }
+      proxy: createProxy()
     },
-    plugins: [createPlugins({ command })],
+    plugins: [createPlugins(isBuild)],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url))

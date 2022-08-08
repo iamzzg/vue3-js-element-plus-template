@@ -51,15 +51,13 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
-import { useCounterStore } from "@/stores/counter.js";
+import { useCounterStore } from "@/stores/modules/counter.js";
 import { toggleTheme } from "@/hooks/useLightDark.js";
 import { testApi } from "@/api/test";
 import SvgIcon from "@/components/SvgIcon.vue";
 const counterStore = useCounterStore();
 const { counter } = storeToRefs(counterStore);
 const { increment } = counterStore;
-
-console.log("test");
 
 function showNotification() {
   ElNotification({ title: "标题", message: "age", duration: 0 });

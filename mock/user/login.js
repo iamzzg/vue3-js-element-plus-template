@@ -1,9 +1,9 @@
 // https://github.com/vbenjs/vite-plugin-mock
 export default [
   {
-    url: "/api/get",
+    url: "/basic-api/login",
     method: "get",
-    response: ({ query }) => {
+    response: () => {
       return {
         code: 0,
         data: {
