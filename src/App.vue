@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import Layout from "@/layout/index.vue";
+console.log("");
 const size = ref("small");
 const zIndex = ref(3000);
 </script>
