@@ -8,8 +8,6 @@ import { createProxy } from "./config/vite/proxy";
 export default defineConfig(({ command }) => {
   // let env = loadEnv(mode, process.cwd());
   // console.log("输出 loadEnv()  ::>> ", env);
-  // console.log(command, mode);
-  // console.log("输出   ::>> ", process.env);
   const isBuild = command === "build";
   return {
     server: {
